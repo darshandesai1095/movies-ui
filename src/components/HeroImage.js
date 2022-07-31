@@ -1,0 +1,57 @@
+import React, { useContext } from "react";
+import { DataContext } from "../Context";
+import "../css/HeroImage.css"
+import { FaHeart, FaInfoCircle, FaStar } from 'react-icons/fa';
+
+function HeroImage() {
+
+    const {toggleHeart, myLikes} = useContext(DataContext)
+
+    // get the first movie from fetch request data
+    const {fetchedData} = useContext(DataContext)
+    const movie = fetchedData[0]
+    const background = `https://image.tmdb.org/t/p/original${movie.backdrop}`
+    const poster = `https://image.tmdb.org/t/p/original${movie.poster}`
+
+    return (
+        <div className='hero'>
+            
+            <div className="hero__background">
+                <img src={background} alt="movie background" />
+            </div>
+
+            <div className="hero__elements"> 
+                {//<img src={poster} alt="movie poster" />
+                }
+                <div className="hero__info">
+
+                    <div className="rating-and-heart-container">
+                        <p className="release-date">{movie.release_date.slice(0,4)}</p>
+                        <div className='hero__rating'>
+                            <div><FaStar color='white'/></div>
+                            <span>{movie.rating.toFixed(1)}</span>
+                        </div>
+                        <div  className='hero__heart' onClick={() => toggleHeart(movie.id)}>
+                        {
+                            !myLikes.includes(movie.id) ? 
+                                <FaHeart color='rgba(225,225,225, 0.3)'/> 
+                                : 
+                                <FaHeart color='white'/>
+                        }
+                        </div>
+                    </div>
+                    <h3 className="title">{movie.title}</h3>
+                    <p className="overview">{movie.overview}</p>
+                    <div className="container">
+                        
+                    </div>
+
+                </div>
+            
+            </div>
+
+        </div>
+    )
+}
+
+export default HeroImage

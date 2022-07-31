@@ -1,0 +1,89 @@
+.hero {
+    display: relative;
+    /*border: 1px solid coral;*/
+    height: 80vh;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.hero__background > img {
+    position: absolute;
+    filter: blur(5px);
+    z-index: -1;
+    height: 120vh;
+    width: 100vw;
+    object-fit: cover;
+    overflow: hidden;
+    top: 0;
+}
+
+.hero__elements {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: aliceblue;
+    margin-top: 10%;
+    margin-left: 140px;
+}
+
+.hero__elements > img{
+    width: 15vw;
+    border-radius: 5px;
+}
+
+.hero__info {
+    width: 40vw;
+}
+
+.title {
+    font-size: 2.9rem;
+    font-weight: 900;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    letter-spacing: 1.1px;
+    font: 'Josefin Sans';
+}
+
+.overview {
+    font-size: 1rem;
+    line-height: 1.9;
+    letter-spacing: 1.7;
+}
+
+.rating-and-heart-container{
+    margin-top: 20px;
+    display: flex;
+    align-items: baseline;
+    margin-right: 50px;
+    letter-spacing: 1.2px;
+    font-weight: 400;
+}
+
+.hero__heart {
+    transition: 0.4s;
+}
+
+.hero__heart:hover {
+    scale: 1.5;
+}
+
+.hero__rating {
+    display: flex;
+    position: relative;
+    margin: 12px;
+    top: 1.5px;
+}
+
+.hero__rating > span {
+    margin-left: 5px;
+    position: relative;
+    top: -1px;
+}
+
+.hero__heart {
+    position: relative;
+    margin: 5px;
+    top: 1.5px;
+    cursor: pointer;
+}
+
