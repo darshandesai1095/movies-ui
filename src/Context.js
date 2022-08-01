@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { toBeValid } from "@testing-library/jest-dom/dist/matchers"
 import {createContext, useState, useEffect} from "react"
 
@@ -9,7 +10,6 @@ function ContextProvider(props) {
     const [isLoaded, setIsLoaded] = useState(false)
     const [fetchedData, setFetchedData] = useState([]) //movie data
     const [likedMovies, setLikedMovies] = useState([]) // liked movies [{},{},{}]
-    const [myLikes, setMyLikes] = useState([]) // [ids]
   
     const apiKey = '251d597b730b91e70350d6474689f699'
     const path = 'trending/movie/week'
@@ -27,7 +27,7 @@ function ContextProvider(props) {
         .then((jsonResponse) => {
           setIsLoaded(true)
           //setItems(jsonResponse)
-          console.log(jsonResponse)
+          //console.log(jsonResponse)
           // create a movies object with clicked, favourited, etc.
           const moviesData = jsonResponse.results.map((movie) => {
               return (
@@ -68,3 +68,5 @@ function ContextProvider(props) {
 }
 
 export {DataContext, ContextProvider}
+=======
+>>>>>>> Stashed changes
