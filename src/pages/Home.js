@@ -22,7 +22,8 @@ function Home() {
         <div className='home__container'>
             {movies}    
         </div>
-        {console.log(moviesData)}
+        {//console.log(moviesData)
+        }
     </div>
   )
 }

@@ -68,5 +68,3 @@ function ContextProvider(props) {
 }
 
 export {DataContext, ContextProvider}
-=======
->>>>>>> Stashed changes
