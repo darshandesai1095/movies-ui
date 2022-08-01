@@ -51,20 +51,20 @@ function ContextProvider(props) {
     }, [])
 
     const addToLikedMovies = (movie, likedMovies) => {
-        // when id is in array remove, else add
-        if (likedMovies.some(movieObj => movieObj.id === movie.id)) {
-          // remove
-            setLikedMovies(prev => prev.filter(movieObj => movieObj.id !== movie.id))
-        } else {
-          // add
-            setLikedMovies(prev => [...prev, movie])
-        }
+      // when id is in array remove it, else add it
+      if (likedMovies.some(movieObj => movieObj.id === movie.id)) {
+        setLikedMovies(prev => prev.filter(movieObj => movieObj.id !== movie.id))
+        console.log("removed:")
+        console.log(movie)
+      } else {
+        setLikedMovies(prev => [...prev, movie])
+        console.log("added:")
+        console.log(movie)
+      }
     }   
     
     return (
-        <DataContext.Provider value={{  fetchedData,
-                                        likedMovies,
-                                        addToLikedMovies  }}>
+        <DataContext.Provider value={{fetchedData, likedMovies, addToLikedMovies}}>
             {props.children}
         </DataContext.Provider>
     )
