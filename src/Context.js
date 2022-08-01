@@ -9,7 +9,6 @@ function ContextProvider(props) {
     const [isLoaded, setIsLoaded] = useState(false)
     const [fetchedData, setFetchedData] = useState([]) //movie data
     const [likedMovies, setLikedMovies] = useState([]) // liked movies [{},{},{}]
-    const [myLikes, setMyLikes] = useState([]) // [ids]
   
     const apiKey = '251d597b730b91e70350d6474689f699'
     const path = 'trending/movie/week'
@@ -27,7 +26,7 @@ function ContextProvider(props) {
         .then((jsonResponse) => {
           setIsLoaded(true)
           //setItems(jsonResponse)
-          console.log(jsonResponse)
+          //console.log(jsonResponse)
           // create a movies object with clicked, favourited, etc.
           const moviesData = jsonResponse.results.map((movie) => {
               return (
@@ -51,31 +50,21 @@ function ContextProvider(props) {
 
     }, [])
 
-    const toggleHeart = (id) => {
-        // when id is not in array add, else remove
-        if (myLikes.includes(id)) {
-            const index = myLikes.indexOf(id)
-            setMyLikes(prev => prev.filter(val => val !== id))
-        } else {
-            setMyLikes(prev => [...prev, id])
-        }
-    }
-
-    const addTolikedMovies = (movie, likedMovies) => {
+    const addToLikedMovies = (movie, likedMovies) => {
         // when id is in array remove, else add
         if (likedMovies.some(movieObj => movieObj.id === movie.id)) {
+          // remove
             setLikedMovies(prev => prev.filter(movieObj => movieObj.id !== movie.id))
         } else {
+          // add
             setLikedMovies(prev => [...prev, movie])
         }
     }   
     
     return (
         <DataContext.Provider value={{  fetchedData,
-                                        myLikes,
                                         likedMovies,
-                                        toggleHeart,
-                                        addTolikedMovies  }}>
+                                        addToLikedMovies  }}>
             {props.children}
         </DataContext.Provider>
     )
