@@ -51,31 +51,17 @@ function ContextProvider(props) {
 
     }, [])
 
-    const toggleHeart = (id) => {
-        // when id is not in array add, else remove
-        if (myLikes.includes(id)) {
-            const index = myLikes.indexOf(id)
-            setMyLikes(prev => prev.filter(val => val !== id))
-        } else {
-            setMyLikes(prev => [...prev, id])
-        }
-    }
-
-    const addTolikedMovies = (movie, likedMovies) => {
-        // when id is in array remove, else add
-        if (likedMovies.some(movieObj => movieObj.id === movie.id)) {
-            setLikedMovies(prev => prev.filter(movieObj => movieObj.id !== movie.id))
-        } else {
-            setLikedMovies(prev => [...prev, movie])
-        }
+    const addToLikedMovies = (movie, likedMovies) => {
+      // when id is in array remove it, else add it
+      if (likedMovies.some(movieObj => movieObj.id === movie.id)) {
+        setLikedMovies(prev => prev.filter(movieObj => movieObj.id !== movie.id))
+      } else {
+        setLikedMovies(prev => [...prev, movie])
+      }
     }   
     
     return (
-        <DataContext.Provider value={{  fetchedData,
-                                        myLikes,
-                                        likedMovies,
-                                        toggleHeart,
-                                        addTolikedMovies  }}>
+        <DataContext.Provider value={{fetchedData, likedMovies, addToLikedMovies}}>
             {props.children}
         </DataContext.Provider>
     )
