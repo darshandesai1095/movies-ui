@@ -19,15 +19,17 @@ function Card({movie}) {
             <div className='card__image'>
                 {infoRequested && <div className='card__overview'><p>{movie.overview}</p></div>}
                 <img className='card__poster' src={url} alt="film poster"/>
+
                 <div  className='card__heart'
-                onClick={() => toggleHeart(movie.id)}>
+                onClick={() => addToLikedMovies(movie, likedMovies)}>
                     {
-                        !myLikes.includes(movie.id) ? 
+                        !likedMovies.some(movieObj => movieObj.id === movie.id) ? 
                             <FaHeart color='rgba(225,225,225, 0.3)'/> 
                             : 
                             <FaHeart color='#ef233c'/>
                     }
-                </div>
+                </div>    
+
             </div>
 
             <div className='card__footer'>
