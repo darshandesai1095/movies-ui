@@ -22,7 +22,7 @@ function Card({movie}) {
 
                 <div  className='card__heart'
                 onClick={() => addToLikedMovies(movie, likedMovies)}>
-                    {
+                    {   //check if movie is in likedMovies
                         !likedMovies.some(movieObj => movieObj.id === movie.id) ? 
                             <FaHeart color='rgba(225,225,225, 0.3)'/> 
                             : 

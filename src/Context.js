@@ -54,12 +54,8 @@ function ContextProvider(props) {
       // when id is in array remove it, else add it
       if (likedMovies.some(movieObj => movieObj.id === movie.id)) {
         setLikedMovies(prev => prev.filter(movieObj => movieObj.id !== movie.id))
-        console.log("removed:")
-        console.log(movie)
       } else {
         setLikedMovies(prev => [...prev, movie])
-        console.log("added:")
-        console.log(movie)
       }
     }   
     
