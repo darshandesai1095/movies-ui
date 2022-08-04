@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-import { toBeValid } from "@testing-library/jest-dom/dist/matchers"
 import {createContext, useState, useEffect} from "react"
 
 const DataContext = createContext()

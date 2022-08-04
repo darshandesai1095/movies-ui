@@ -5,10 +5,8 @@ import { FaHeart, FaInfoCircle, FaStar } from 'react-icons/fa';
 
 function HeroImage() {
 
-    const {toggleHeart, myLikes} = useContext(DataContext)
+    const {likedMovies, addToLikedMovies, fetchedData} = useContext(DataContext)
 
-    // get the first movie from fetch request data
-    const {fetchedData} = useContext(DataContext)
     const movie = fetchedData[0]
     const background = `https://image.tmdb.org/t/p/original${movie.backdrop}`
     const poster = `https://image.tmdb.org/t/p/original${movie.poster}`
@@ -31,14 +29,16 @@ function HeroImage() {
                             <div><FaStar color='white'/></div>
                             <span>{movie.rating.toFixed(1)}</span>
                         </div>
-                        <div  className='hero__heart' onClick={() => toggleHeart(movie.id)}>
-                        {
-                            !myLikes.includes(movie.id) ? 
-                                <FaHeart color='rgba(225,225,225, 0.3)'/> 
-                                : 
-                                <FaHeart color='white'/>
-                        }
-                        </div>
+
+                        <div className='hero__heart'onClick={() => addToLikedMovies(movie, likedMovies)}>
+                            {   //check if movie is in likedMovies
+                                !likedMovies.some(movieObj => movieObj.id === movie.id) ? 
+                                    <FaHeart color='rgba(225,225,225, 0.3)'/> 
+                                    : 
+                                    <FaHeart color='white'/>
+                            }
+                        </div>   
+
                     </div>
                     <h3 className="title">{movie.title}</h3>
                     <p className="overview">{movie.overview}</p>
