@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="app">
 <NavBar/>
-{<HeroImage/>
+{//<HeroImage/>
 }
 <Home/>
       {            //

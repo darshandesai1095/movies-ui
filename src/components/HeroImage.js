@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { DataContext } from "../Context";
 import "../css/HeroImage.css"
-import { FaHeart, FaInfoCircle, FaStar } from 'react-icons/fa';
+import { FaHeart, FaStar } from 'react-icons/fa';
 
 function HeroImage() {
 
