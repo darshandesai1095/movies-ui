@@ -8,12 +8,13 @@ function ContextProvider(props) {
     const [isLoaded, setIsLoaded] = useState(false)
     const [fetchedData, setFetchedData] = useState([]) //movie data
     const [likedMovies, setLikedMovies] = useState([]) // liked movies [{},{},{}]
+    const [genre, setGenre] = useState(16)
   
     const apiKey = '251d597b730b91e70350d6474689f699'
     //const path = 'trending/movie/week'
     //const url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}`
     const path = 'discover/movie'
-    const url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}&with_genres=16`
+    const url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}&with_genres=${genre}`
   
     useEffect(() => {
       fetch(url)

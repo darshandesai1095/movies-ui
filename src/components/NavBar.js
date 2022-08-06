@@ -1,16 +1,36 @@
-import React from "react";
+import { useState } from "react"
 import "../css/NavBar.css"
+import categoriesData from "../data/CategoriesData.js"
 
 function NavBar() {
+
+    const [hovered, setHovered] = useState(false)
+
+    const categories = categoriesData.map(category => (
+        <p  className="category__item"
+            onClick={() => goToCategory(category.Object.keys(category))}>
+            {Object.keys(category)}
+        </p>
+    ))
+
     
     return (
         <div className="navbar">
 
-            <div className="navbar__item" >Trending</div>
-            <div className="navbar__item" onMouseOver={()=>console.log('mouseOver')}>Categories</div>     
-            <div className="navbar__item" >Random</div>
-            <div className="navbar__item" >Favourites</div>
-            <div className="navbar__item" >About</div>
+            <div><p className="navbar__item" >Trending</p></div>
+
+            <div 
+                onMouseEnter={()=>setHovered(true)}
+                onMouseLeave={()=>setHovered(false)}>
+
+                    <p className="navbar__item">Categories
+                        {hovered && <p className="category">{categories}</p>}
+                    </p>
+            </div>   
+
+            <div><p className="navbar__item" >Random</p></div>
+            <div><p className="navbar__item" >Favourites</p></div>
+            <div><p className="navbar__item" >About</p></div>
             
         </div>
 

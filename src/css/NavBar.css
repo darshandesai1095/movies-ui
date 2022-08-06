@@ -23,6 +23,9 @@
     text-align: center;
     font-weight: 400;
     transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    position: relative;
   }
 
 .navbar__item:hover {
@@ -30,4 +33,24 @@
     border-bottom: 1px solid rgba(240, 248, 255, 1);
     cursor: pointer;
     scale: 1.05;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 25px;
+  border-radius: 2px;
+}
+
+.category__item {
+  background-color: rgba(0, 0, 0, 1);
+  margin: 0;
+  padding: 3px;
+  color: rgba(240, 248, 255, 1);
+}
+
+.category__item:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
