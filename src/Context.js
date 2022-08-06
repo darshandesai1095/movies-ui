@@ -10,8 +10,10 @@ function ContextProvider(props) {
     const [likedMovies, setLikedMovies] = useState([]) // liked movies [{},{},{}]
   
     const apiKey = '251d597b730b91e70350d6474689f699'
-    const path = 'trending/movie/week'
-    const url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}`
+    //const path = 'trending/movie/week'
+    //const url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}`
+    const path = 'discover/movie'
+    const url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}&with_genres=16`
   
     useEffect(() => {
       fetch(url)
