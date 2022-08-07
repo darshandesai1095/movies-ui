@@ -9,12 +9,16 @@ function ContextProvider(props) {
     const [fetchedData, setFetchedData] = useState([]) //movie data
     const [likedMovies, setLikedMovies] = useState([]) // liked movies [{},{},{}]
     const [genre, setGenre] = useState(16)
-  
+
     const apiKey = '251d597b730b91e70350d6474689f699'
+    const path = 'discover/movie'
+    //const [url, setUrl] = useState(`https://api.themoviedb.org/3/${path}?api_key=${apiKey}&with_genres=${genre}`)
+    const url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}&with_genres=${genre}`
+
     //const path = 'trending/movie/week'
     //const url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}`
-    const path = 'discover/movie'
-    const url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}&with_genres=${genre}`
+
+    //const url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}&with_genres=${genre}`
   
     useEffect(() => {
       fetch(url)
@@ -50,7 +54,7 @@ function ContextProvider(props) {
           console.log(error)
         })
 
-    }, [genre])
+    }, [genre, url])
 
     const addToLikedMovies = (movie, likedMovies) => {
       // when id is in array remove it, else add it
@@ -66,7 +70,7 @@ function ContextProvider(props) {
     }
     
     return (
-        <DataContext.Provider value={{fetchedData, likedMovies, addToLikedMovies, goToCategory}}>
+        <DataContext.Provider value={{fetchedData, likedMovies, addToLikedMovies, goToCategory, genre}}>
             {props.children}
         </DataContext.Provider>
     )
