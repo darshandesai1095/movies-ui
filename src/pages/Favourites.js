@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { DataContext } from "../Context.js"
 import Card from "../components/Card.js"
+import "./css/Favourites.css"
 
 function Favourites() {
 
@@ -16,8 +17,8 @@ function Favourites() {
   })
 
   return (
-    <div className='home'>
-        <div className='home__container'>
+    <div className='favourites'>
+        <div className='favourites__container'>
             {movies}    
         </div>
     </div>

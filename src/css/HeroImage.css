@@ -7,7 +7,7 @@
 
 .hero__background > img {
     position: absolute;
-    filter: blur(5px);
+    filter: blur(0px);
     z-index: -1;
     height: 120vh;
     width: 100vw;
@@ -21,7 +21,7 @@
     flex-direction: row;
     align-items: center;
     color: aliceblue;
-    margin-top: 10%;
+    margin-top: 8%;
     margin-left: 140px;
 }
 
