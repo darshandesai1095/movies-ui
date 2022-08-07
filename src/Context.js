@@ -50,7 +50,7 @@ function ContextProvider(props) {
           console.log(error)
         })
 
-    }, [])
+    }, [genre])
 
     const addToLikedMovies = (movie, likedMovies) => {
       // when id is in array remove it, else add it
@@ -59,10 +59,14 @@ function ContextProvider(props) {
       } else {
         setLikedMovies(prev => [...prev, movie])
       }
-    }   
+    }
+    
+    const goToCategory = (ID) => {
+      setGenre(ID)
+    }
     
     return (
-        <DataContext.Provider value={{fetchedData, likedMovies, addToLikedMovies}}>
+        <DataContext.Provider value={{fetchedData, likedMovies, addToLikedMovies, goToCategory}}>
             {props.children}
         </DataContext.Provider>
     )

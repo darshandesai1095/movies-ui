@@ -1,15 +1,17 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import "../css/NavBar.css"
 import categoriesData from "../data/CategoriesData.js"
+import { DataContext } from "../Context.js"
 
 function NavBar() {
 
+    const {goToCategory} = useContext(DataContext)
     const [hovered, setHovered] = useState(false)
 
     const categories = categoriesData.map(category => (
         <p  className="category__item"
-            onClick={() => goToCategory(category.Object.keys(category))}>
-            {Object.keys(category)}
+            onClick={() => goToCategory(category.ID)}>
+            {category.Category}
         </p>
     ))
 
