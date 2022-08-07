@@ -8,12 +8,12 @@ function ContextProvider(props) {
     const [isLoaded, setIsLoaded] = useState(false)
     const [fetchedData, setFetchedData] = useState([]) //movie data
     const [likedMovies, setLikedMovies] = useState([]) // liked movies [{},{},{}]
-    const [genre, setGenre] = useState(16)
+    const [genre, setGenre] = useState("")
+    const [path, setPath] = useState("/trending/movie/week")
 
     const apiKey = '251d597b730b91e70350d6474689f699'
-    const path = 'discover/movie'
-    //const [url, setUrl] = useState(`https://api.themoviedb.org/3/${path}?api_key=${apiKey}&with_genres=${genre}`)
-    const url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}&with_genres=${genre}`
+    //const path = '/discover/movie'
+    const url = `https://api.themoviedb.org/3${path}?api_key=${apiKey}${genre}`
 
     //const path = 'trending/movie/week'
     //const url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}`
@@ -65,12 +65,21 @@ function ContextProvider(props) {
       }
     }
     
-    const goToCategory = (ID) => {
-      setGenre(ID)
+    const setURL = (ID, isGenre) => {
+      if (isGenre) {
+        setPath('/discover/movie')
+        setGenre(`&with_genres=${ID}`)
+      } else {
+        setPath('/trending/movie/week')
+        setGenre("")
+      }
+
+
+      isGenre ? setGenre(`&with_genres=${ID}`) : setGenre("")
     }
     
     return (
-        <DataContext.Provider value={{fetchedData, likedMovies, addToLikedMovies, goToCategory, genre}}>
+        <DataContext.Provider value={{fetchedData, likedMovies, addToLikedMovies, setURL, genre}}>
             {props.children}
         </DataContext.Provider>
     )

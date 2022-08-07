@@ -5,13 +5,13 @@ import { DataContext } from "../Context.js"
 
 function NavBar() {
 
-    const {goToCategory, genre} = useContext(DataContext)
+    const {setURL, genre} = useContext(DataContext)
     const [hovered, setHovered] = useState(false)
 
     const categories = categoriesData.map(category => (
         <p  key={category.ID}
             className={`category__item  ${genre===category.ID && 'red'}`}
-            onClick={() => goToCategory(category.ID)}>
+            onClick={() => setURL(category.ID, true)}>
             {category.Category}
         </p>
     ))
@@ -20,14 +20,16 @@ function NavBar() {
     return (
         <div className="navbar">
 
-            <div><p className="navbar__item">
+            <div><p className="navbar__item"
+                    onClick={() => setURL(null, false)}>
                 Trending
                 </p>
             </div>
 
             <div 
                 onMouseEnter={()=>setHovered(true)}
-                onMouseLeave={()=>setHovered(false)}>
+                onMouseLeave={()=>setHovered(false)}
+                onClick={()=>setHovered(false)}>
 
                     <p className="navbar__item">Categories
                         {hovered && <p className="category">{categories}</p>}
