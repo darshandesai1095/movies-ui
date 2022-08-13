@@ -2,6 +2,7 @@ import { useState, useContext } from "react"
 import "../css/NavBar.css"
 import categoriesData from "../data/CategoriesData.js"
 import { DataContext } from "../Context.js"
+import { Link } from "react-router-dom";
 
 function NavBar() {
 
@@ -20,12 +21,15 @@ function NavBar() {
     return (
         <div className="navbar">
 
+            <Link to="/">
             <div><p className="navbar__item"
                     onClick={() => setURL(null, false)}>
-                Trending
+                Home
                 </p>
             </div>
+            </Link>
 
+            <Link to="/Categories">
             <div 
                 onMouseEnter={()=>setHovered(true)}
                 onMouseLeave={()=>setHovered(false)}
@@ -34,11 +38,20 @@ function NavBar() {
                     <p className="navbar__item">Categories
                         {hovered && <p className="category">{categories}</p>}
                     </p>
-            </div>   
+            </div>
+            </Link>   
 
+            <Link to="/Random">
             <div><p className="navbar__item" >Random</p></div>
-            <div><p className="navbar__item" >Favourites</p></div>
+            </Link>
+            
+            <Link to="/Favourites">
+                <div><p className="navbar__item" >Favourites</p></div>
+            </Link>
+        
+            <Link to="/About">
             <div><p className="navbar__item" >About</p></div>
+            </Link>
             
         </div>
 

@@ -7,7 +7,7 @@ import { FaHeart, FaInfoCircle, FaStar } from 'react-icons/fa';
 function Card({movie}) {
 
     const [infoRequested, setInfoRequested] = useState(false)
-    const {toggleHeart, myLikes, likedMovies, addToLikedMovies} = 
+    const {likedMovies, addToLikedMovies} = 
         useContext(DataContext)
     const url =
         `https://image.tmdb.org/t/p/original${movie.poster}`

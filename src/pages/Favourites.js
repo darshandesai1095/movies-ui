@@ -1,11 +1,11 @@
 import React, { useContext } from "react"
+import "../css/Favourites.css"
 import { DataContext } from "../Context.js"
 import Card from "../components/Card.js"
-import "./css/Favourites.css"
 
 function Favourites() {
 
-  const moviesData = useContext(DataContext).likedMovies
+{/*  const moviesData = useContext(DataContext).likedMovies
 
   const movies = moviesData.map((movie) => {
     return (
@@ -15,12 +15,11 @@ function Favourites() {
         />
         )
   })
+*/}
 
   return (
     <div className='favourites'>
-        <div className='favourites__container'>
-            {movies}    
-        </div>
+      TEST PAGE!!!
     </div>
   )
 }

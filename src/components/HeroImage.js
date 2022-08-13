@@ -19,8 +19,6 @@ function HeroImage() {
             </div>
 
             <div className="hero__elements"> 
-                {//<img src={poster} alt="movie poster" />
-                }
                 <div className="hero__info">
 
                     <div className="rating-and-heart-container">
@@ -40,10 +38,9 @@ function HeroImage() {
                         </div>   
 
                     </div>
-                    <h3 className="title">{movie.title}</h3>
-                    <p className="overview">{movie.overview}</p>
-                    <div className="container">
-                        
+                        <h3 className="title">{movie.title}</h3>
+                        <p className="overview">{movie.overview}</p>
+                        <div className="container">       
                     </div>
 
                 </div>

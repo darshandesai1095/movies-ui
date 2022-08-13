@@ -4,7 +4,11 @@ import React, { useContext } from "react"
 import Home from "./pages/Home.js"
 import HeroImage from "./components/HeroImage"
 import NavBar from "./components/NavBar"
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Favourites from "./pages/Favourites.js"
+import About from "./pages/About.js"
+import Random from "./pages/Random.js"
+import Trending from "./pages/Trending.js"
 
 function App() {
 
@@ -14,22 +18,18 @@ function App() {
     <BrowserRouter>
       <div className="app">
         <NavBar/>
-        {
-          <HeroImage/>
-        }
-        <Home/>
+        <HeroImage/>
       </div>
 
-        <nav>
 
-        <NavLink to="">Home</NavLink>
+      <Routes>
+        <Route exact path="/" element={<Home/>} />
+        <Route exact path="/trending" element={<Trending/>} />
+        <Route exact path="/random" element={<Random/>} />       
+        <Route path="/Favourites" element={<Favourites/>} />
+        <Route path="/about" element={<About/>} />
+      </Routes>
 
-        <NavLink to="about">About</NavLink>
-
-        <NavLink to="contact">Contact</NavLink>
-
-      </nav>
-      
     </BrowserRouter>
   )
 }

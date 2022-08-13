@@ -1,9 +1,8 @@
 import React, { useContext } from "react"
 import { DataContext } from "../Context.js"
 import Card from "../components/Card.js"
-import HeroImage from "../components/HeroImage.js"
 
-function Home() {
+function Random() {
 
   const moviesData = useContext(DataContext).fetchedData
 
@@ -19,16 +18,12 @@ function Home() {
   })
 
   return (
-
-    
-      <div className='home'>
-          <div className='home__container'>
-              {movies}    
-          </div>
-      </div>
-    
-
+    <div className='home'>
+        <div className='home__container'>
+            {movies}    
+        </div>
+    </div>
   )
 }
 
-export default Home
+export default Random
