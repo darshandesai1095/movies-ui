@@ -1,14 +1,17 @@
 import "./App.css"
 import React, { useContext } from "react"
-//import { DataContext } from "./Context.js"
-import Home from "./pages/Home.js"
-import HeroImage from "./components/HeroImage"
-import NavBar from "./components/NavBar"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+//import { DataContext } from "./Context.js"
+
+//components
+import NavBar from "./components/NavBar"
+
+//pages
+import Home       from "./pages/Home.js"
+import Categories from "./pages/Categories.js"
 import Favourites from "./pages/Favourites.js"
-import About from "./pages/About.js"
-import Random from "./pages/Random.js"
-import Trending from "./pages/Trending.js"
+import About      from "./pages/About.js"
+import Random     from "./pages/Random.js"
 
 function App() {
 
@@ -18,18 +21,16 @@ function App() {
     <BrowserRouter>
       <div className="app">
         <NavBar/>
-        <HeroImage/>
+
+        <Routes>
+          <Route exact path="/"     element={<Home/>} />
+          <Route path="/categories" element={<Categories/>} />
+          <Route path="/random"     element={<Random/>} />       
+          <Route path="/Favourites" element={<Favourites/>} />
+          <Route path="/about"      element={<About/>} />
+        </Routes>
+      
       </div>
-
-
-      <Routes>
-        <Route exact path="/" element={<Home/>} />
-        <Route exact path="/trending" element={<Trending/>} />
-        <Route exact path="/random" element={<Random/>} />       
-        <Route path="/Favourites" element={<Favourites/>} />
-        <Route path="/about" element={<About/>} />
-      </Routes>
-
     </BrowserRouter>
   )
 }
