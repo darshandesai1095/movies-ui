@@ -3,7 +3,7 @@ import { DataContext } from "../Context.js"
 import Card from "../components/Card.js"
 import HeroImage from "../components/HeroImage.js"
 
-function Home() {
+function Categories() {
 
   const moviesData = useContext(DataContext).fetchedData
 
@@ -32,4 +32,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Categories

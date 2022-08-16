@@ -11,46 +11,57 @@ function NavBar() {
 
     const categories = categoriesData.map(category => (
         <p  key={category.ID}
-            className={`category__item  ${genre===category.ID && 'red'}`}
+            className={`category__item  ${genre===category.ID && 'category__item--red'}`}
             onClick={() => setURL(category.ID, true)}>
             {category.Category}
         </p>
     ))
 
+    // const style = {
+    //     textDecoration: 'none',
+    //     fontSize: '0.8rem',
+    //     letterSpacing: '1.1px',
+    //     margin: '4px',
+    //     border: '2px solid rgba(255, 255, 255, 0)',
+    //     textAlign: 'center',
+    //     fontWeight: '400',
+    //     transition: '0.2s',
+    //     display: 'flex',
+    //     justifyContent: 'center',
+    //     position: 'relative',
+    //     color: 'white'
+    // }
+
     
     return (
         <div className="navbar">
 
-            <Link to="/">
-            <div><p className="navbar__item"
-                    onClick={() => setURL(null, false)}>
-                Home
-                </p>
-            </div>
+            <Link to="/" className="navbar__item">
+                <div onClick={() => setURL(null, false)}>
+                    Home
+                </div>
             </Link>
 
-            <Link to="/Categories">
-            <div 
-                onMouseEnter={()=>setHovered(true)}
-                onMouseLeave={()=>setHovered(false)}
-                onClick={()=>setHovered(false)}>
-
-                    <p className="navbar__item">Categories
-                        {hovered && <p className="category">{categories}</p>}
-                    </p>
-            </div>
+            <Link to="/Categories" className="navbar__item">
+                <div 
+                    onMouseEnter={()=>setHovered(true)}
+                    onMouseLeave={()=>setHovered(false)}
+                    onClick={()=>setHovered(false)}>
+                        Categories
+                        {hovered && <p className="categories">{categories}</p>}
+                </div>
             </Link>   
 
-            <Link to="/Random">
-            <div><p className="navbar__item" >Random</p></div>
+            <Link to="/Random" className="navbar__item">
+                <div>Random</div>
             </Link>
             
-            <Link to="/Favourites">
-                <div><p className="navbar__item" >Favourites</p></div>
+            <Link to="/Favourites" className="navbar__item">
+                <div>Favourites</div>
             </Link>
         
-            <Link to="/About">
-            <div><p className="navbar__item" >About</p></div>
+            <Link to="/About" className="navbar__item">
+                <div>About</div>
             </Link>
             
         </div>
