@@ -17,28 +17,13 @@ function NavBar() {
         </p>
     ))
 
-    // const style = {
-    //     textDecoration: 'none',
-    //     fontSize: '0.8rem',
-    //     letterSpacing: '1.1px',
-    //     margin: '4px',
-    //     border: '2px solid rgba(255, 255, 255, 0)',
-    //     textAlign: 'center',
-    //     fontWeight: '400',
-    //     transition: '0.2s',
-    //     display: 'flex',
-    //     justifyContent: 'center',
-    //     position: 'relative',
-    //     color: 'white'
-    // }
-
     
     return (
         <div className="navbar">
 
             <Link to="/" className="navbar__item">
                 <div onClick={() => setURL(null, false)}>
-                    Home
+                    Trending
                 </div>
             </Link>
 
@@ -53,7 +38,7 @@ function NavBar() {
             </Link>   
 
             <Link to="/Random" className="navbar__item">
-                <div>Random</div>
+                <div>Upcoming</div>
             </Link>
             
             <Link to="/Favourites" className="navbar__item">
