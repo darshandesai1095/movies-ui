@@ -8,12 +8,12 @@ function ContextProvider(props) {
     const [isLoaded, setIsLoaded] = useState(false)
     const [fetchedData, setFetchedData] = useState([]) //movie data
     const [likedMovies, setLikedMovies] = useState([]) // liked movies [{},{},{}]
-    
+
     const apiKey = '251d597b730b91e70350d6474689f699'
     const [path, setPath] = useState("trending/movie/week")
     const [genre, setGenre] = useState("")
 
-    url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}${genre}`
+    const url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}${genre}`
 
   
     useEffect(() => {
@@ -61,12 +61,15 @@ function ContextProvider(props) {
       }
     }
     
-    const generateURL = (path, genre="", url ) => {
-      setPath(path, genre, url)
+    const updateUrlParams = (path, genre="") => {
+      setPath(path)
+      setGenre(genre)
+      console.log(url)
+
     }
     
     return (
-        <DataContext.Provider value={{fetchedData, likedMovies, addToLikedMovies, generateURL}}>
+        <DataContext.Provider value={{fetchedData, likedMovies, addToLikedMovies, updateUrlParams}}>
             {props.children}
         </DataContext.Provider>
     )
@@ -79,13 +82,13 @@ export {DataContext, ContextProvider}
   ---BASE---                      ---PATH---            ---API KEY---        ---GENRE---
 
   MOVIE BY GENRE
-  https://api.themoviedb.org/3/   discover/movie        ?api_key=${apiKey}    ${genre}
+  https://api.themoviedb.org/3/   discover/movie        ?api_key=${apiKey}    &genre=${genre}
 
   MOVIE BY TRENDING (WEEK)
-  https://api.themoviedb.org/3/   trending/movie/week   ?api_key=${apiKey}`
+  https://api.themoviedb.org/3/   trending/movie/week   ?api_key=${apiKey}
 
   UPCOMING MOVIES
-  https://api.themoviedb.org/3/   movie/upcoming        ?api_key=${apiKey}`
+  https://api.themoviedb.org/3/   movie/upcoming        ?api_key=${apiKey}
 
 */
 }

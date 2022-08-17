@@ -6,13 +6,14 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
 
-    const {setURL, genre} = useContext(DataContext)
+    const {updateUrlParams} = useContext(DataContext)
     const [hovered, setHovered] = useState(false)
 
     const categories = categoriesData.map(category => (
         <p  key={category.ID}
-            className={`category__item  ${genre===category.ID && 'category__item--red'}`}
-            onClick={() => setURL(category.ID, true)}>
+            className={`category__item`}
+            onClick={() => updateUrlParams("discover/movie", `&with_genre=${category.ID}`)}
+            onClick={() => console.log(category.ID)}>
             {category.Category}
         </p>
     ))
@@ -22,7 +23,7 @@ function NavBar() {
         <div className="navbar">
 
             <Link to="/" className="navbar__item">
-                <div onClick={() => setURL(null, false)}>
+                <div onClick={() => updateUrlParams("trending/movie/week")}>
                     Trending
                 </div>
             </Link>
@@ -38,7 +39,9 @@ function NavBar() {
             </Link>   
 
             <Link to="/Random" className="navbar__item">
-                <div>Upcoming</div>
+                <div onClick={() => updateUrlParams("movie/upcoming")}>
+                    Upcoming
+                </div>
             </Link>
             
             <Link to="/Favourites" className="navbar__item">
