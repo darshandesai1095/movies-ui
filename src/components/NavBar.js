@@ -12,9 +12,8 @@ function NavBar() {
     const categories = categoriesData.map(category => (
         <p  key={category.ID}
             className={`category__item`}
-            onClick={() => updateUrlParams("discover/movie", `&with_genre=${category.ID}`)}
-            onClick={() => console.log(category.ID)}>
-            {category.Category}
+            onClick={() => updateUrlParams("discover/movie", `&with_genres=${category.ID}`)}>
+                {category.Category}
         </p>
     ))
 

@@ -50,7 +50,7 @@ function ContextProvider(props) {
           console.log(error)
         })
 
-    }, [path])
+    }, [url])
 
     const addToLikedMovies = (movie, likedMovies) => {
       // when id is in array remove it, else add it
@@ -61,11 +61,9 @@ function ContextProvider(props) {
       }
     }
     
-    const updateUrlParams = (path, genre="") => {
-      setPath(path)
-      setGenre(genre)
-      console.log(url)
-
+    const updateUrlParams = (moviePath, movieGenre="") => {
+      setPath(moviePath)
+      setGenre(movieGenre)
     }
     
     return (
@@ -82,7 +80,7 @@ export {DataContext, ContextProvider}
   ---BASE---                      ---PATH---            ---API KEY---        ---GENRE---
 
   MOVIE BY GENRE
-  https://api.themoviedb.org/3/   discover/movie        ?api_key=${apiKey}    &genre=${genre}
+  https://api.themoviedb.org/3/   discover/movie        ?api_key=${apiKey}    &with_genres=${genre}
 
   MOVIE BY TRENDING (WEEK)
   https://api.themoviedb.org/3/   trending/movie/week   ?api_key=${apiKey}
