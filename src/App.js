@@ -11,7 +11,7 @@ import Home       from "./pages/Home.js"
 import Categories from "./pages/Categories.js"
 import Favourites from "./pages/Favourites.js"
 import About      from "./pages/About.js"
-import Random     from "./pages/Random.js"
+import Upcoming   from "./pages/Upcoming.js"
 
 function App() {
 
@@ -24,10 +24,10 @@ function App() {
 
         <Routes>
           <Route exact path="/"     element={<Home/>} />
-          <Route path="/categories" element={<Categories/>} />
-          <Route path="/random"     element={<Random/>} />       
+          <Route path="/Categories" element={<Categories/>} />
+          <Route path="/Upcoming"   element={<Upcoming/>} />       
           <Route path="/Favourites" element={<Favourites/>} />
-          <Route path="/about"      element={<About/>} />
+          <Route path="/About"      element={<About/>} />
         </Routes>
       
       </div>

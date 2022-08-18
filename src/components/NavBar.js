@@ -8,6 +8,7 @@ function NavBar() {
 
     const {updateUrlParams} = useContext(DataContext)
     const [hovered, setHovered] = useState(false)
+    const [genre, setGenre] = useState(null)
 
     const categories = categoriesData.map(category => (
         <p  key={category.ID}
@@ -37,7 +38,7 @@ function NavBar() {
                 </div>
             </Link>   
 
-            <Link to="/Random" className="navbar__item">
+            <Link to="/Upcoming" className="navbar__item">
                 <div onClick={() => updateUrlParams("movie/upcoming")}>
                     Upcoming
                 </div>

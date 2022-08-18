@@ -1,0 +1,6 @@
+things to do 
+
+1   local storage
+2   about page
+3   footer
+4   load more

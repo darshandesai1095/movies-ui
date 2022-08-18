@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import { DataContext } from "../Context.js"
 import Card from "../components/Card.js"
 
+
 function Favourites() {
 
 const moviesData = useContext(DataContext).likedMovies

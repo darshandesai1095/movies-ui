@@ -10,7 +10,7 @@
     margin-left: 130px;
     z-index: 1;
     top: 0px;
-    max-width: 35vw;
+    max-width: 30vw;
     border-bottom: 1px solid rgba(240, 248, 255, 0);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   }
@@ -19,7 +19,7 @@
   .navbar__item {
     font-size: 0.8rem;
     letter-spacing: 1.1px;
-    margin: 4px;
+    margin: 10px;
     border: 2px solid rgba(255, 255, 255, 0);
     text-align: center;
     font-weight: 400;
@@ -48,7 +48,7 @@
   border-radius: 2px;
   padding-top: 10px;
   font-size: small;
-  left: -15px;
+  left: -14.5px;
 }
 
 .category__item {

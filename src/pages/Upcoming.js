@@ -1,8 +1,9 @@
 import React, { useContext } from "react"
 import { DataContext } from "../Context.js"
 import Card from "../components/Card.js"
+import HeroImage from "../components/HeroImage.js"
 
-function Random() {
+function Upcoming() {
 
   const moviesData = useContext(DataContext).fetchedData
 
@@ -18,12 +19,18 @@ function Random() {
   })
 
   return (
-    <div className='home'>
-        <div className='home__container'>
-            {movies}    
-        </div>
+    <div>
+
+      <HeroImage/> 
+
+      <div className='home'>
+          <div className='home__container'>
+              {movies}    
+          </div>
+      </div>
+
     </div>
   )
 }
 
-export default Random
+export default Upcoming
