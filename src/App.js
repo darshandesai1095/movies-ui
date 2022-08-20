@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //components
 import NavBar from "./components/NavBar"
+import Footer from "./components/Footer";
 
 //pages
 import Home       from "./pages/Home.js"
@@ -29,7 +30,9 @@ function App() {
           <Route path="/Favourites" element={<Favourites/>} />
           <Route path="/About"      element={<About/>} />
         </Routes>
-      
+
+
+        <Footer/>
       </div>
     </BrowserRouter>
   )

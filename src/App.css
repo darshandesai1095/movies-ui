@@ -31,3 +31,12 @@
   text-decoration: none;
   font-weight: 600;
 }
+
+.footer {
+  color: white;
+  margin-top: 50px;
+  padding: 20px;
+  text-align: center;
+  background-color: #242423;
+  font-size: 0.8rem;
+}
