@@ -19,7 +19,7 @@ const moviesData = useContext(DataContext).likedMovies
   return (
     <div className='home'>
       <div className='home__container'>
-        {movies.length == 0 ? <p className="favourites-message">No movies favourited yet</p> : movies}
+        {movies.length === 0 ? <p className="favourites-message">No movies favourited yet</p> : movies}
       </div>
     </div>
   )

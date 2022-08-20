@@ -15,8 +15,19 @@
   justify-content: center;
 }
 
-.favourites-message {
-  margin: 20% auto;
+.favourites-message,
+.about {
+  margin: 20% 50px;
   color: white;
   text-align: center;
+}
+
+.about {
+  line-height: 2em;
+}
+
+.about a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
 }

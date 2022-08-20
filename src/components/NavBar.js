@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
 
-    const {updateUrlParams} = useContext(DataContext)
+    const {updateUrlParams, likedMovies} = useContext(DataContext)
     const [hovered, setHovered] = useState(false)
     const [genre, setGenre] = useState(null)
 
@@ -45,7 +45,9 @@ function NavBar() {
             </Link>
             
             <Link to="/Favourites" className="navbar__item">
-                <div>Favourites</div>
+                <div>
+                    Favourites
+                </div>
             </Link>
         
             <Link to="/About" className="navbar__item">

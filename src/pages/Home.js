@@ -20,14 +20,15 @@ function Home() {
 
   return (
     <div>
-        <HeroImage/> 
 
-        <div className='home'>
-            <div className='home__container'>
-                {movies}    
-            </div>
+      <HeroImage />
+
+      <div className='home'>
+        <div className='home__container'>
+          {movies}    
         </div>
       </div>
+    </div>
 
   )
 }
