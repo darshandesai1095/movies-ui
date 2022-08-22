@@ -37,6 +37,7 @@
     top: 15px;
     right: 15px;
     transition: 0.4s;
+    color: #f5cb5c;
 }
 
 .card__heart:hover {

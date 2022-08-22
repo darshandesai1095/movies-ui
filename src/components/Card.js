@@ -26,7 +26,7 @@ function Card({movie}) {
                         !likedMovies.some(movieObj => movieObj.id === movie.id) ? 
                             <FaHeart color='rgba(225,225,225, 0.3)'/> 
                             : 
-                            <FaHeart color='#ef233c'/>
+                            <FaHeart color='#FE6D73'/>
                     }
                 </div>    
 

@@ -4,6 +4,11 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
 .home {
   width: 90vw;
   margin: 0 auto;
@@ -17,12 +22,10 @@
 
 .favourites-message,
 .about {
-  margin: 20% 50px;
+  margin-top: 30vh;
+  height: 10vh;
   color: white;
   text-align: center;
-}
-
-.about {
   line-height: 2em;
 }
 
@@ -33,10 +36,13 @@
 }
 
 .footer {
+  width: 100vw;
   color: white;
-  margin-top: 50px;
-  padding: 20px;
+  padding: 20px 0;
   text-align: center;
-  background-color: #242423;
+  background-color: rgba(36, 36, 35, 0.7);
   font-size: 0.8rem;
+  margin-top: 50px;
+  position: absolute;
+  bottom: -150px;
 }
