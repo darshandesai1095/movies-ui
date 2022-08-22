@@ -12,6 +12,7 @@ function NavBar() {
     const [genre, setGenre] = useState(null)
     const [searchQuery, setSearchQuery] = useState("")
     const [isSearchActivated, setIsSearchActivated] = useState(false)
+    const [isSearchHovered, setIsSearchHovered] = useState(false)
 
     const categories = categoriesData.map(category => (
         <p  key={category.ID}
@@ -66,7 +67,9 @@ function NavBar() {
             <div className="search-icon">
                 <FaSearch 
                             onClick={() => setIsSearchActivated(prev => !prev)}
-                            color={isSearchActivated ? "#FE6D73" : "white"}
+                            onMouseEnter={() => setIsSearchHovered(true)}
+                            onMouseLeave={() => setIsSearchHovered(false)}
+                            color={(isSearchActivated || isSearchHovered) ? "#FE6D73" : "white"}
                 />
             </div>
 
