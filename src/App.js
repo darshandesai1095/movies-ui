@@ -18,9 +18,14 @@ function App() {
 
   //const moviesData = useContext(DataContext)
 
+  const removeSearchBar = () => {
+    
+  }
+
   return (
     <BrowserRouter>
-      <div className="app">
+      <div className="app" onClick={removeSearchBar}>
+        
         <NavBar/>
 
         <Routes>
@@ -33,6 +38,7 @@ function App() {
 
 
         <Footer/>
+
       </div>
     </BrowserRouter>
   )
