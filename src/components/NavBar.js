@@ -4,6 +4,7 @@ import categoriesData from "../data/CategoriesData.js"
 import { DataContext } from "../Context.js"
 import { Link } from "react-router-dom";
 import { FaSearch } from 'react-icons/fa';
+import SearchBar from "./SearchBar";
 
 function NavBar() {
 
@@ -12,7 +13,6 @@ function NavBar() {
     const [genre, setGenre] = useState(null)
     const [searchQuery, setSearchQuery] = useState("")
     const [isSearchActivated, setIsSearchActivated] = useState(false)
-    const [isSearchHovered, setIsSearchHovered] = useState(false)
 
     const categories = categoriesData.map(category => (
         <p  key={category.ID}
@@ -63,38 +63,13 @@ function NavBar() {
 
             </div>
 
+            <div>
 
-            <div className="search-icon">
-                <FaSearch 
-                            onClick={() => setIsSearchActivated(prev => !prev)}
-                            onMouseEnter={() => setIsSearchHovered(true)}
-                            onMouseLeave={() => setIsSearchHovered(false)}
-                            color={(isSearchActivated || isSearchHovered) ? "#FE6D73" : "white"}
-                />
             </div>
-
-
-            {
-                isSearchActivated &&
-
-                <div className="secondary__navbar">
-                    <form>
-                        <input  
-                            className={`search-box`}
-                            type="text"
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                        />
-                    </form>
-                </div>
-
-            }
-
-
+            <SearchBar className="search"/>
 
         </div>
-            
-
+        
     )
 }
 

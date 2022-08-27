@@ -1,0 +1,32 @@
+.search-bar {
+    margin-top: 3px;
+    max-width: 240px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search-icon {
+    margin: 5px 10px 0 8px;
+    background-color: rgba(0, 0, 0, 0);
+    scale: 0.9;
+    transition: 0.4s;
+}
+
+.search-icon:hover {
+    cursor: pointer;
+    scale: 1.2
+    /* color: #FE6D73; */
+}
+
+input {
+    width: 200px;
+    color: #FE6D73;
+    background-color: rgba(255, 255, 255, 0);
+    outline: none;
+    border: none;
+    font-size: 0.8rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid #FE6D73;
+    padding-left: 3px;
+}
