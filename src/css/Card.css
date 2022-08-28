@@ -20,12 +20,7 @@
     z-index: -2;
     border-radius: 5px;
     transition: 0.2s;
-    cursor: pointer;
 }
-
-.card__image > img:hover {
-    scale: 1.05;
-} 
 
 .card__poster {
       top: 0px;
