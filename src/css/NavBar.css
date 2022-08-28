@@ -1,14 +1,17 @@
 .navbar {
+    width: calc(100vw - 130px);
     position: relative;
     color: white;
     display: flex;
     flex-direction: row;
     justify-content: start;
-    margin-left: 130px;
-    margin-bottom: 50px;
-    padding-top: 10px;
+    padding-left: 130px;
+    padding-bottom: 25px;
+    margin-bottom: 40px;
+    padding-top: 15px;
     z-index: 1;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%); 
 }
 
 .primary__navbar {

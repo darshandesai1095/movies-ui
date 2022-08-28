@@ -13,18 +13,16 @@ import Categories from "./pages/Categories.js"
 import Favourites from "./pages/Favourites.js"
 import About      from "./pages/About.js"
 import Upcoming   from "./pages/Upcoming.js"
+import SearchPage from "./pages/SearchPage.js"
 
 function App() {
 
   //const moviesData = useContext(DataContext)
 
-  const removeSearchBar = () => {
-    
-  }
 
   return (
     <BrowserRouter>
-      <div className="app" onClick={removeSearchBar}>
+      <div className="app">
         
         <NavBar/>
 
@@ -34,6 +32,7 @@ function App() {
           <Route path="/Upcoming"   element={<Upcoming/>} />       
           <Route path="/Favourites" element={<Favourites/>} />
           <Route path="/About"      element={<About/>} />
+          <Route path="/Search"     element={<SearchPage/>} />
         </Routes>
 
 

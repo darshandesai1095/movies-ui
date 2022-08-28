@@ -20,6 +20,10 @@
   justify-content: center;
 }
 
+.home__container > p {
+  border: 1px solid red;
+}
+
 .favourites-message,
 .about {
   margin-top: 30vh;
@@ -30,7 +34,7 @@
 }
 
 .about a {
-  color: white;
+  color: #FE6D73;
   text-decoration: none;
   font-weight: 600;
 }

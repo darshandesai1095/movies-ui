@@ -1,6 +1,8 @@
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, useContext } from "react"
+import { DataContext } from "../Context.js"
 import "../css/SearchBar.css"
 import { FaSearch } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 function SearchBar() {
 
@@ -11,7 +13,23 @@ function SearchBar() {
 
     useEffect(() => {
         inputEl.current?.focus()
-      }, [isSearchActivated]);
+      }, [isSearchActivated]
+    );
+
+    const {updateUrlParams} = useContext(DataContext)
+    const navigate = useNavigate()
+
+    function handleKeyDown(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault()
+            updateUrlParams("search/movie", "", `&query=${searchQuery.replace(/ /g,"+")}`)
+            navigate("/Search")
+            setIsSearchActivated(false)
+            setSearchQuery("")
+            
+        }
+    }
+    
 
     
     return (
@@ -27,7 +45,7 @@ function SearchBar() {
             { 
                 isSearchActivated &&
 
-                    <div >
+                    <div>
                         <form>
                             <input 
                                 ref = {inputEl} 
@@ -36,6 +54,7 @@ function SearchBar() {
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 placeholder="Search Movie..."
+                                onKeyDown={handleKeyDown}
                             />
                         </form>
                     </div>    

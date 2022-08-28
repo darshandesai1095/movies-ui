@@ -58,14 +58,13 @@ function NavBar() {
                 </Link>
             
                 <Link to="/About" className="navbar__item">
-                    <div>About</div>
+                    <div>
+                        About
+                    </div>
                 </Link>
 
             </div>
 
-            <div>
-
-            </div>
             <SearchBar className="search"/>
 
         </div>

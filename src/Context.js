@@ -12,7 +12,8 @@ function ContextProvider(props) {
     const apiKey = '251d597b730b91e70350d6474689f699'
     const [path, setPath] = useState("trending/movie/week")
     const [genre, setGenre] = useState("")
-    const url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}${genre}`
+    const [movieName, setMovieName] = useState("")
+    const url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}${genre}${movieName}`
 
 
     //////////////////////////////////////////////////////////////////
@@ -68,16 +69,18 @@ function ContextProvider(props) {
           })
           setFetchedData(moviesData) //to display movies
           //setMyMovies(moviesData) //saved movies + cleanup function used
+          console.log(fetchedData)
         }).catch((err) => {
           setError(err)
           console.log(error)
         })
 
-    }, [url])
+    }, [path, genre, movieName])
     
-    const updateUrlParams = (moviePath, movieGenre="") => {
+    const updateUrlParams = (moviePath, movieGenre="", movieName="") => {
       setPath(moviePath)
       setGenre(movieGenre)
+      setMovieName(movieName)
     }
     
     return (
@@ -106,7 +109,7 @@ export {DataContext, ContextProvider}
   https://api.themoviedb.org/3/     movie/{movie_id}/videos   ?api_key=${apiKey}
 
   SEARCH
-  https://api.themoviedb.org/3/     seatch/movie              ?api_key=${apiKey}      &query=${movieName}   
+  https://api.themoviedb.org/3/     search/movie              ?api_key=${apiKey}      &query=${movieName}   
 
 */
 }
