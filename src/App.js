@@ -1,7 +1,6 @@
 import "./App.css"
 import React, { useContext } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-//import { DataContext } from "./Context.js"
 
 //components
 import NavBar from "./components/NavBar"
