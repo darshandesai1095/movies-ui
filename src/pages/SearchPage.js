@@ -20,7 +20,7 @@ const moviesData = useContext(DataContext).fetchedData
   return (
     <div className='home'>
       <div className='home__container'>
-        {movies}
+        {movies.length >= 1 ? movies : <div className="about">No movies found</div>}
       </div>
     </div>
   )
