@@ -1,5 +1,5 @@
 import "./App.css"
-import React, { useContext } from "react"
+import React from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //components
@@ -17,7 +17,6 @@ import SearchPage from "./pages/SearchPage.js"
 function App() {
 
   //const moviesData = useContext(DataContext)
-
 
   return (
     <BrowserRouter>

@@ -18,10 +18,12 @@ function Home() {
       }
   })
 
+
+
   return (
     <div>
 
-      <HeroImage />
+      <HeroImage/>
 
       <div className='home'>
         <div className='home__container'>

@@ -7,7 +7,6 @@ function ContextProvider(props) {
     const [error, setError] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
     const [fetchedData, setFetchedData] = useState([]) //movie data
-    //const [likedMovies, setLikedMovies] = useState([]) // liked movies [{},{},{}]
 
     const apiKey = '251d597b730b91e70350d6474689f699'
     const [path, setPath] = useState("trending/movie/week")
@@ -39,7 +38,6 @@ function ContextProvider(props) {
   //////////////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////
 
-
     useEffect(() => {
       fetch(url)
         .then((res) => {
@@ -51,9 +49,6 @@ function ContextProvider(props) {
         })
         .then((jsonResponse) => {
           setIsLoaded(true)
-          //setItems(jsonResponse)
-          //console.log(jsonResponse)
-          // create a movies object with clicked, favourited, etc.
           const moviesData = jsonResponse.results.map((movie) => {
               return (
                 {
