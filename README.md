@@ -15,5 +15,5 @@ React JS, React Context API for state management
 <img width="700" alt="Movies3" src="https://github.com/darshandesai1095/movies-ui/assets/43254178/62111db2-319d-49c7-8665-8373c354a801">
 
 ### Contact Information
-Email: darshandesai1095@gmail.com
+Email: darshandesai1995@gmail.com
 
